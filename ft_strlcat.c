@@ -16,31 +16,22 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	len;
-	int		final;
-	int		lendst;
-	char	*tmp;
+	size_t	lendst;
 
-	len = 0;
-	tmp = dst;
-	lendst = ft_strlen(tmp);
-	if (src != NULL)
+	lendst = ft_strlen(dst);
+	len = ft_strlen(src);
+	if (dstsize <= lendst)
+		return (dstsize + len);
+	while (src != NULL && i < (dstsize - 1))
 	{
-		len = ft_strlen(src);
-		if (dst != NULL || dstsize != 0)
-		{
-			i = 0;
-			while ((i < len) && i < (dstsize - 1))
-			{
-				dst[i] = src[i];
-				i++;
-			}
-			dst[i] = '\0';
-		}
+		dst[i] = src[i];
+		i++;
 	}
-	final = len + lendst;
-	return (final);
+	dst[i] = '\0';
+	return (len + lendst);
 }
 /*int main ()
+
 {
 	size_t dstsize = 0;
 	char dst[] = "aaa";
