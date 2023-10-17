@@ -6,7 +6,7 @@
 /*   By: paromero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 09:58:44 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/10 11:28:42 by paromero         ###   ########.fr       */
+/*   Updated: 2023/10/17 12:39:40 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	*ft_bzero(void *s, size_t n)
 	char	*b;
 
 	i = 0;
-	b = s;
+	b = (char *)s;
 	while (i < n)
 	{
-		b[i] = '0';
+		b[i] = 0;
 		i++;
 	}
 	return (s);
