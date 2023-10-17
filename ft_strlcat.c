@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 10:14:08 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/11 11:23:33 by paromero         ###   ########.fr       */
+/*   Updated: 2023/10/17 11:44:46 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	if (src != NULL)
 	{
 		len = ft_strlen(src);
-		if (dst != NULL && dstsize != 0)
+		if (dst != NULL || dstsize != 0)
 		{
 			i = 0;
 			while ((i < len) && i < (dstsize - 1))
