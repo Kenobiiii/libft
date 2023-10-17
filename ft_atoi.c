@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 12:12:27 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/10 11:22:40 by paromero         ###   ########.fr       */
+/*   Updated: 2023/10/17 12:21:10 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int	ft_atoi(const char *str)
 		}
 		i++;
 	}
-	while (str[i] >= 0 && str[i] <= 9)
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		result = (result * 10) + (str[i] - 0);
+		result = (result * 10) + (str[i] - '0');
 		i++;
 	}
 	return (result * sign);
