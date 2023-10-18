@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 11:02:16 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/10 11:02:36 by paromero         ###   ########.fr       */
+/*   Updated: 2023/10/18 10:15:19 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,13 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	write (fd, s, 1);
+	int	i;
+
+	i = 0;
+	if (s != NULL)
+	{
+		while (s[i])
+			write (fd, &s[i], 1);
+			i++;
+	}
 }
