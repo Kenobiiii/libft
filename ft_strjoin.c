@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 10:10:02 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/16 11:08:42 by paromero         ###   ########.fr       */
+/*   Updated: 2023/10/18 12:34:07 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	while (b--)
 		final[a++] = s2[i++];
+	final[a] = '\0';
 	return (final);
 }
 /*int main()
