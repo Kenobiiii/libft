@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 10:09:57 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/17 10:58:32 by paromero         ###   ########.fr       */
+/*   Updated: 2023/10/18 10:27:11 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*s11;
+	unsigned char	*s22;
 
+	s11 = (unsigned char *)s1;
+	s22 = (unsigned char *)s2;
 	i = 0;
-	while (i < n)
+	while (i < n && (s11[i] != '\0' || s22[i] != '\0'))
 	{
-		if (s1[i] < s2[i] || s1[i] > s2[i])
+		if (s11[i] < s22[i] || s11[i] > s22[i])
 		{
-			return (s1[i] - s2[i]);
+			return (s11[i] - s22[i]);
 		}
-		if (s1[i] == s2[i] && i == n)
+		if (s11[i] == s22[i] && i == n)
 		{
 			return (0);
 		}
