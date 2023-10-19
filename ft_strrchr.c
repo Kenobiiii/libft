@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 11:52:09 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/18 12:13:41 by paromero         ###   ########.fr       */
+/*   Updated: 2023/10/19 11:27:00 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,17 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
-	size_t	tmp;
+	char	*s1;
+	int		tmp;
 
-	tmp = ft_strlen(s);
-	i = 0;
-	if (c == '\0')
-		return (NULL);
-	while (s[i] != '\0')
+	s1 = (char *)s;
+	tmp = ft_strlen(s1);
+	while (tmp >= 0)
 	{
-		if (c == s[tmp])
+		if (s1[tmp] == c)
 		{
-			return ((char *)s + tmp);
+			return (&s1[tmp]);
 		}
-		i++;
 		tmp--;
 	}
 	return (NULL);
