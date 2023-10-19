@@ -43,7 +43,7 @@ int	allocate_substr(char **array, char const *s, char c)
 		while (s[i] == c && s[i] != '\0')
 			i++;
 		start = i;
-		while (s[i] != c || s[i] != '\0')
+		while (s[i] != c && s[i] != '\0')
 			i++;
 	}
 	if (i > start)

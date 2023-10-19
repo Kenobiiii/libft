@@ -14,5 +14,17 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	write (fd, &n, 1);
+	size_t	s;
+
+	s = n;
+	if (n < 0)
+	{
+		s = s * (-1);
+		ft_putchar_fd('-', fd);
+	}
+	if (s >= 10)
+	{
+		ft_putnbr_fd((s / 10), fd);
+	}
+	ft_putchar_fd(((s % 10) + '0'), fd);
 }
