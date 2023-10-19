@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 10:21:42 by paromero          #+#    #+#             */
-/*   Updated: 2023/09/29 11:03:37 by paromero         ###   ########.fr       */
+/*   Updated: 2023/10/19 11:58:56 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	len;
 
 	len = 0;
+	if (!src || !dst)
+		return (0);
 	if (src != NULL)
 	{
 		len = ft_strlen(src);
