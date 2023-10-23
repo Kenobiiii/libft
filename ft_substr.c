@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 10:59:32 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/16 11:06:56 by paromero         ###   ########.fr       */
+/*   Updated: 2023/10/23 12:19:02 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
-	int	i;
+	int		i;
 
 	i = 0;
 	str = malloc(len + 1);
 	if (!s || (!str))
 		return (NULL);
-	if (start > ft_strlen(s))
+	if (start >= ft_strlen(s))
 	{
 		return (ft_strdup(""));
 	}
