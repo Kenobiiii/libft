@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 10:21:42 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/23 12:04:47 by paromero         ###   ########.fr       */
+/*   Updated: 2023/10/24 13:10:54 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	len;
 
 	len = 0;
-	if (src != NULL)
+	if (src != NULL && dst != NULL)
 	{
 		len = ft_strlen(src);
-		if (dst != NULL && dstsize != 0)
+		if (dstsize != 0)
 		{
 			i = 0;
 			while ((i < len) && i < (dstsize - 1))
