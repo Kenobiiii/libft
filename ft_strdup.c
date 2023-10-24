@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:03:10 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/17 10:47:33 by paromero         ###   ########.fr       */
+/*   Updated: 2023/10/24 12:00:33 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s1)
 
 	i = 0;
 	s = (char *)s1;
-	result = (char *)malloc(strlen(s1) + 1);
+	result = (char *)malloc(ft_strlen(s1) + 1);
 	if (result == NULL)
 		return (NULL);
 	while (s[i] != '\0')
