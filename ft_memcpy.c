@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 10:42:50 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/16 10:55:46 by paromero         ###   ########.fr       */
+/*   Updated: 2023/10/24 11:01:08 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	s = dst;
 	p = (unsigned char *)src;
+	if (!src && !dst)
+		return (NULL);
 	while (i < n)
 	{
 		s[i] = p[i];
