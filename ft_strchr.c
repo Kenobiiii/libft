@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 11:41:58 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/24 17:59:37 by paromero         ###   ########.fr       */
+/*   Updated: 2023/10/25 12:13:43 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (i <= tmp)
 	{
-		if (c == s1[i])
+		if ((unsigned char)c == s1[i])
 		{
 			return (&s1[i]);
 		}
