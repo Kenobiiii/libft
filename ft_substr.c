@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 10:59:32 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/26 16:02:08 by paromero         ###   ########.fr       */
+/*   Updated: 2023/10/26 17:19:43 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (len > (ft_strlen(s) - start))
 		len = ft_strlen(s) - start;
-	tmp = maft_lloc(len + 1);
+	tmp = malloc(len + 1);
 	if (!tmp)
 		return (NULL);
 	while (i < len && s[i + start] != '\0')
