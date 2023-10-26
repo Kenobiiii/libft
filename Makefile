@@ -14,18 +14,27 @@ ft_strjoin.c ft_split.c ft_strtrim.c ft_strmapi.c ft_striteri.c ft_itoa.c
 OBJ = $(SRC:.c=.o)
 INCLUDE = libft.h
 
+BONUS			=	ft_lstnew.c #ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+					ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+
+BONUS_OBJS		= $(BONUS:.c=.o)
+
+
 all: $(NAME)
 
-$(NAME): $(OBJ) $(INCLUDE)
+$(NAME): $(OBJ) $(INCLUDE) $(BONUS_OBJS)
 	$(LIB) $(NAME) $(OBJ)
 
 %.o: %.c
 	$(CC) $(CCFLAGS) -c -o $@ $<
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(BONUS_OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
 
-re: fclean all
+bonus:			$(OBJS) $(BONUS_OBJS)
+				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+
+re: fclean all bonus
