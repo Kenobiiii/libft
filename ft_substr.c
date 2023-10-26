@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 10:59:32 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/26 11:46:06 by paromero         ###   ########.fr       */
+/*   Updated: 2023/10/26 16:02:08 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
-	tmp = malloc(len + 1);
-	if (!tmp)
+	if (!s)
 		return (NULL);
 	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
-	while (i < len)
+	if (len > (ft_strlen(s) - start))
+		len = ft_strlen(s) - start;
+	tmp = maft_lloc(len + 1);
+	if (!tmp)
+		return (NULL);
+	while (i < len && s[i + start] != '\0')
 	{
 		tmp[i] = s[i + start];
 		i++;
@@ -40,5 +44,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
     } else {
         printf("Error al duplicar la cadena.\n");
     }
-    return 0;
+    return 0; 
 }*/
