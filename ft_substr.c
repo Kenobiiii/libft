@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 10:59:32 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/25 11:46:05 by paromero         ###   ########.fr       */
+/*   Updated: 2023/10/26 11:46:06 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,22 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
+	char	*tmp;
 	size_t	i;
 
 	i = 0;
-	str = malloc(sizeof (char) * (len + 1));
-	if (!s || !str)
+	tmp = malloc(len + 1);
+	if (!tmp)
 		return (NULL);
 	if (start >= ft_strlen(s))
-	{
 		return (ft_strdup(""));
-	}
-	while (len--)
+	while (i < len)
 	{
-		str[i] = s[i + start];
+		tmp[i] = s[i + start];
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	tmp[i] = '\0';
+	return (tmp);
 }
 /*int main() {
     const char *original = "Buenos dias!";
