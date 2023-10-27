@@ -6,13 +6,13 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:38:49 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/24 11:44:45 by paromero         ###   ########.fr       */
+/*   Updated: 2023/10/27 11:14:20 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_substr(char const *s, char c)
+static int	count_substr(char const *s, char c)
 {
 	size_t	i;
 	size_t	count;
@@ -31,7 +31,7 @@ int	count_substr(char const *s, char c)
 	return (count);
 }
 
-int	allocate_substr(char **array, char const *s, char c)
+static int	allocate_substr(char **array, char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -58,7 +58,7 @@ int	allocate_substr(char **array, char const *s, char c)
 	return (0);
 }
 
-void	free_mem(char **array)
+static void	free_mem(char **array)
 {
 	size_t	i;
 
