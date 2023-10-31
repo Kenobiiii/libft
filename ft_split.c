@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:38:49 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/27 11:14:20 by paromero         ###   ########.fr       */
+/*   Updated: 2023/10/31 12:29:26 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,3 +91,17 @@ char	**ft_split(char const *s, char c)
 	}
 	return (array);
 }
+/*int main()
+{
+    char str[] = "buenos días";
+    char **result = ft_split(str, ' ');
+
+    if (result)
+    {
+        for (int i = 0; result[i] != NULL; i++)
+        {
+            printf("palabra %d: %s\n", i, result[i]);
+        }
+    }
+    return 0;
+}*/

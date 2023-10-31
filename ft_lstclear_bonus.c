@@ -6,7 +6,7 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 10:32:50 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/30 12:10:22 by paromero         ###   ########.fr       */
+/*   Updated: 2023/10/31 12:21:32 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*tmp;
 
 	if (!lst || !del)
-		return;
+		return ;
 	while (*lst)
 	{
-		tmp = (*lst)->next;; 
+		tmp = (*lst)->next;
 		ft_lstdelone(*lst, del);
-			*lst = tmp;
+		*lst = tmp;
 	}
 }
