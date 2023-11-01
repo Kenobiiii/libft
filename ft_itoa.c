@@ -6,13 +6,13 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:21:22 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/26 13:48:06 by paromero         ###   ########.fr       */
+/*   Updated: 2023/11/01 11:40:48 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	negative(int n)
+static int	ft_negative(int n)
 {
 	if (n < 0)
 		return (n * -1);
@@ -41,7 +41,7 @@ char	*ft_itoa(int n)
 	tmp[i] = '\0';
 	while (i--)
 	{
-		tmp[i] = (negative(n % 10) + '0');
+		tmp[i] = (ft_negative(n % 10) + '0');
 		n /= 10;
 	}
 	if (tmp[0] == '0' && tmp[1] != '\0')

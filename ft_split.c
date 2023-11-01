@@ -6,13 +6,13 @@
 /*   By: paromero <paromero@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:38:49 by paromero          #+#    #+#             */
-/*   Updated: 2023/10/31 12:29:26 by paromero         ###   ########.fr       */
+/*   Updated: 2023/11/01 11:39:37 by paromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_substr(char const *s, char c)
+static int	ft_count_substr(char const *s, char c)
 {
 	size_t	i;
 	size_t	count;
@@ -31,7 +31,7 @@ static int	count_substr(char const *s, char c)
 	return (count);
 }
 
-static int	allocate_substr(char **array, char const *s, char c)
+static int	ft_allocate_substr(char **array, char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -58,7 +58,7 @@ static int	allocate_substr(char **array, char const *s, char c)
 	return (0);
 }
 
-static void	free_mem(char **array)
+static void	ft_free_mem(char **array)
 {
 	size_t	i;
 
@@ -80,13 +80,13 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	substrlen = count_substr(s, c);
+	substrlen = ft_count_substr(s, c);
 	array = (char **)ft_calloc(substrlen + 1, sizeof(char *));
 	if (!array)
 		return (NULL);
-	if (allocate_substr(array, s, c) == -1)
+	if (ft_allocate_substr(array, s, c) == -1)
 	{
-		free_mem(array);
+		ft_free_mem(array);
 		return (NULL);
 	}
 	return (array);
