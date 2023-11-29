@@ -19,23 +19,36 @@ BONUS			=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlas
 
 BONUS_OBJS		= $(BONUS:.c=.o)
 
+# Colores
+GREEN = \033[1;32m
+RESET = \033[0m
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(INCLUDE) $(BONUS_OBJS)
-	$(LIB) $(NAME) $(OBJ)
+	@echo "$(GREEN)Creating library...$(RESET)"
+	@$(LIB) $(NAME) $(OBJ)
+	@echo "$(GREEN)Library created: $(NAME)$(RESET)"
 
 %.o: %.c
-	$(CC) $(CCFLAGS) -c -o $@ $<
+	@echo "$(GREEN)Compiling $<...$(RESET)"
+	@$(CC) $(CCFLAGS) -c -o $@ $<
+	@echo "$(GREEN)$< compiled!$(RESET)"
 
 clean:
-	$(RM) $(OBJ) $(BONUS_OBJS)
+	@echo "$(GREEN)Cleaning...$(RESET)"
+	@$(RM) $(OBJ) $(BONUS_OBJS)
+	@echo "$(GREEN)Clean complete.$(RESET)"
 
 fclean: clean
-	$(RM) $(NAME)
+	@echo "$(GREEN)Deleting $(NAME)...$(RESET)"
+	@$(RM) $(NAME)
+	@echo "$(GREEN)Deleted $(NAME)$(RESET)"
 
-bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus: $(OBJS) $(BONUS_OBJS)
+	@echo "$(GREEN)Creating bonus...$(RESET)"
+	@$(LIB) $(NAME) $(OBJ) $(BONUS_OBJS)
+	@echo "$(GREEN)Bonus created!$(RESET)"
 
 re: fclean all bonus
 
